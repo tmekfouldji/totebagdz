@@ -55,7 +55,9 @@ php artisan optimize
 php artisan queue:restart
 ```
 
-الأصول الحالية CSS/JS وصور جاهزة داخل `public`، لذلك لا يلزم Node أو `npm build` على الخادم.
+الأصول الحالية CSS/JS وصور جاهزة داخل `public`، لذلك لا يلزم Node أو `npm build` على الخادم. لا يحتوي المشروع على `package.json` عمدًا، حتى لا يحاول Forge تشغيل Vite بإصدار Node غير متوافق.
+
+إذا كان Deployment Script الذي أنشأه Forge سابقًا يحتوي على `npm install` أو `npm run build`، احذف السطرين منه واستخدم السكربت أعلاه.
 
 ملاحظة: `db:seed` آمن لإعادة التشغيل لأنه يستخدم `updateOrCreate` و`upsert`. كلمة مرور المدير تُحدّث من متغيرات البيئة في كل نشر؛ أبقها قوية وسرية.
 
