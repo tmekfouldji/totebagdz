@@ -1,0 +1,12 @@
+{
+  "name": "totebagdz",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static frontend asset verification for Forge deployments",
+  "scripts": {
+    "build": "node -e \"for (const file of ['public/styles.css','public/app.js','public/admin.css','public/admin.js']) require('node:fs').accessSync(file); console.log('Static frontend assets are ready.')\""
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
